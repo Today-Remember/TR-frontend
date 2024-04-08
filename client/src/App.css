@@ -37,16 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.logo_text{
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate( -50%, -50% );
-}
-
-.logo img{
-  width: 700px;
-  height: 400px;
-  vertical-align: center;
-}
