@@ -1,5 +1,6 @@
 import React from "react";
 import "./IntroPage.css";
+
 const IntroPage = () => {
   return (
     <div>
