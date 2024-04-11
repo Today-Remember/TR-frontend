@@ -4,6 +4,11 @@
   flex-direction: column;
 }
 
+.logo{
+  position: relative;
+  align-items: center;
+}
+
 .logo h2 {
   position: absolute;
   top: 30%;
@@ -13,12 +18,10 @@
 
 .logo img {
   width: 50%;
+  margin-left: 25%;
   vertical-align: center;
 }
 
-.logo{
-  position: relative;
-}
 
 .logo h2 {
   position: absolute;
@@ -42,6 +45,16 @@
   height: 30px;
 }
 
+.find_id_pw {
+  font-size: 10px;
+  margin-top: 20px;
+  color: gray;
+}
+
 .login {
   margin-top: 10px;
+}
+
+.join_member {
+  margin-top: 20px;
 }
