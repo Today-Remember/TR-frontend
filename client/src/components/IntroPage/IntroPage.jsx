@@ -17,8 +17,8 @@ const IntroPage = () => {
         <input type="password" id="pw" />
         <br></br>
         <button type="submit">로그인</button>
+        <button>회원가입</button>
       </form>
-      <button>회원가입</button>
     </div>
   );
 };

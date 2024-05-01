@@ -4,14 +4,20 @@
   flex-direction: column;
 }
 
+.logo {
+  position: relative;
+  text-align: center;
+  margin: 2rem;
+}
+
 .logo h2 {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .logo img {
   width: 50%;
-  vertical-align: center;
+  margin: auto;
 }
