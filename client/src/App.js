@@ -1,20 +1,13 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./components/IntroPage/IntroPage";
-import IntroPage from "./components/IntroPage/IntroPage.jsx";
-import MainPage from "./components/main/MainPage.jsx";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import IntroPage from "./components/IntroPage/IntroPage";
+import MainPage from "./components/main/mainPage";
+import DetailPage from "./components/detailPage/detailPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<IntroPage/>} />
-      </Routes>
-    </Router>
-  
-    // <div className="App">
-    //   <IntroPage />
-    // </div>
+    <div className="App">
+      <IntroPage />
+    </div>
   );
 }
 

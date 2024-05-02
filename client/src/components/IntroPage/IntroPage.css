@@ -4,6 +4,12 @@
 
 }
 
+.logo {
+  position: relative;
+  text-align: center;
+  margin: 2rem;
+}
+
 .logo h2 {
   position: absolute;
   top: 40%;
