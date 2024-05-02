@@ -1,5 +1,5 @@
 import React from "react";
-import "./detailPage.css";
+import "./DetailPage.css";
 import { TiThMenu } from "react-icons/ti";
 
 const MainPage = () => {
