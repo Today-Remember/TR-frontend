@@ -12,12 +12,19 @@ const IntroPage = () => {
       </div>
 
       <form className="input">
-        <input type="text" />
+        <h3>아이디</h3>
+        <input type="text" id="id" />
         <br></br>
+        <h3>비밀번호</h3>
         <input type="password" id="pw" />
         <br></br>
-        <button type="submit">로그인</button>
-        <button>회원가입</button>
+        <div className="find_id_pw">
+          <h3>비밀번호를 잊어버렸어요</h3>
+        </div>
+        <br></br>
+        <button className="login" type="submit">로그인</button>
+        <br></br>
+        <button className="join_member">회원가입</button>
       </form>
     </div>
   );

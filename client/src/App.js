@@ -5,13 +5,9 @@ import DetailPage from "./components/detailPage/detailPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<IntroPage/>} />
-        <Route path="/main" element={<MainPage/>}/>
-        <Route path="/detail" element={<DetailPage/>}/>
-      </Routes>
-    </Router>
+    <div className="App">
+      <IntroPage />
+    </div>
   );
 }
 
