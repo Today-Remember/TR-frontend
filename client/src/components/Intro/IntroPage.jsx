@@ -1,8 +1,8 @@
 import React from "react";
 import "./IntroPage.css";
-// import logo from "./Logo/logo.svg";
-import Logo from "./Logo/img/logo.png";
 
+import Logo from "./Logo/img/logo.png";
+import { NavLink } from "react-router-dom";
 const IntroPage = () => {
   return (
     <div>
@@ -11,20 +11,25 @@ const IntroPage = () => {
         <h2>Today Remember</h2>
       </div>
 
-      <form className="input">
+      <form className="inputbox">
         <h3>아이디</h3>
         <input type="text" id="id" />
-        <br></br>
         <h3>비밀번호</h3>
         <input type="password" id="pw" />
-        <br></br>
         <div className="find_id_pw">
-          <h3>비밀번호를 잊어버렸어요</h3>
+          <h4 style={{ textDecoration: "underline" }}>
+            비밀번호를 잊어버렸어요
+          </h4>
         </div>
+        <button className="login" type="submit">
+          <p>로그인</p>
+        </button>
         <br></br>
-        <button className="login" type="submit">로그인</button>
-        <br></br>
-        <button className="join_member">회원가입</button>
+        <NavLink to="signin" style={{ textDecoration: "none" }}>
+          <button className="join_member">
+            <p>회원가입</p>
+          </button>
+        </NavLink>
       </form>
     </div>
   );
