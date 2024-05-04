@@ -11,20 +11,24 @@ const IntroPage = () => {
         <h2>Today Remember</h2>
       </div>
 
-      <form className="input">
+      <form className="inputbox">
         <h3>아이디</h3>
         <input type="text" id="id" />
         <h3>비밀번호</h3>
         <input type="password" id="pw" />
         <div className="find_id_pw">
-          <h4>비밀번호를 잊어버렸어요</h4>
+          <h4 style={{ textDecoration: "underline" }}>
+            비밀번호를 잊어버렸어요
+          </h4>
         </div>
         <button className="login" type="submit">
-          로그인
+          <p>로그인</p>
         </button>
         <br></br>
         <NavLink to="signin" style={{ textDecoration: "none" }}>
-          <button className="join_member">회원가입</button>
+          <button className="join_member">
+            <p>회원가입</p>
+          </button>
         </NavLink>
       </form>
     </div>
