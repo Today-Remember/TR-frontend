@@ -3,8 +3,29 @@
   margin-left: 1%;
 }
 
+.text_box {
+  margin: 10px;
+  display: flex;
+  width: auto;
+  height: 800px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  border-style: solid;
+}
+
 .text {
   font-size: 25px;
-  margin-top: 30px;
-  margin-left: 100px;
+  margin: 10px;
+}
+
+.input_box {
+  margin: 10px;
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  border-style: solid;
 }
