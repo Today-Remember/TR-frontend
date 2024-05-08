@@ -5,7 +5,7 @@ import Logo from "./Logo/img/logo.png";
 import { NavLink } from "react-router-dom";
 const IntroPage = () => {
   return (
-    <div>
+    <div className="content">
       <div className="logo">
         <img src={Logo} alt="logo" />
         <h2>Today Remember</h2>
