@@ -3,7 +3,7 @@
   margin-left: 1%;
 }
 
-.text_box {
+.show_text_box {
   margin: 20px;
   display: flex;
   width: auto;
@@ -17,6 +17,7 @@
 .text {
   font-size: 25px;
   margin: 10px;
+  font-style: normal;
 }
 
 .input_box {

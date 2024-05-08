@@ -5,7 +5,7 @@ import { FaArrowUp } from "react-icons/fa";
 const MainPage = () => {
   return (
     <div>
-      <div className="text_box">
+      <div className="show_text_box">
         <div className="text">
           오늘은 오전은 맑은 날씨였지만 바람이 많이 불었다.
           오후에는 비가 조금 내렸다.
