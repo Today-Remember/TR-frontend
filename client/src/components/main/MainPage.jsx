@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainPage.css";
+import { FaArrowUp } from "react-icons/fa";
 
 const MainPage = () => {
   return (
@@ -13,7 +14,11 @@ const MainPage = () => {
       </div>
       <div className="input_box">
         <div className="input">
-          당신의 일기를 들려주세요
+          당신의 일기를 작성해주세요
+        </div>
+        <div className="send_input">
+          send
+          <FaArrowUp size={13}/>
         </div>
       </div>
     </div>
