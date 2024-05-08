@@ -21,7 +21,7 @@
 }
 
 .input_box {
-  background-color: #DDE3FF;
+  background-color: #dde3ff;
   margin: 30px;
   display: flex;
   width: auto;
@@ -29,9 +29,4 @@
   justify-content: center;
   align-items: center;
   border-radius: 32px;
-}
-
-.send_input {
-  font-size: 20px;
-  margin-left: 30px;
 }

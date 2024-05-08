@@ -8,7 +8,7 @@ const IntroPage = () => {
     <div className="content">
       <div className="logo">
         <img src={Logo} alt="logo" />
-        <h2>Today Remember</h2>
+        <p>Today Remember</p>
       </div>
 
       <form className="inputbox">

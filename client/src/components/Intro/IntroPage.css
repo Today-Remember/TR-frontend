@@ -1,24 +1,30 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto 0 auto;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 20px;
+}
+
 .logo {
-  margin-top: 20%;
   position: relative;
   align-items: center;
 }
 
-.logo {
-  position: relative;
-  text-align: center;
-}
-
-.logo h2 {
+.logo p {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 35px;
   z-index: 2;
 }
 
 .logo img {
-  width: 70%;
+  width: 100%;
   vertical-align: center;
   z-index: 1;
 }
@@ -92,4 +98,15 @@
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+}
+
+@media (max-width: 580px) {
+  .logo p {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    z-index: 2;
+  }
 }
