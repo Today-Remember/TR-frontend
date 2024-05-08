@@ -11,8 +11,10 @@ const MainPage = () => {
         <div className="text">{text}</div>
       </div>
       <div className="input_box">
-        <input>당신의 일기를 작성해주세요</input>
-        <SendButton />
+        <input className="input"></input>
+        <div className="send-button">
+          <SendButton />
+        </div>
       </div>
     </div>
   );

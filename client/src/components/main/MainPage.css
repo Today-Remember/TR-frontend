@@ -29,4 +29,18 @@
   justify-content: center;
   align-items: center;
   border-radius: 32px;
+  flex-direction: row;
+}
+.send-button {
+  justify-self: flex-end;
+}
+.input {
+  width: 90%;
+  border-color: transparent;
+  background-color: #dde3ff;
+}
+
+.input input:hover,
+.input input:active {
+  border-width: 1;
 }
