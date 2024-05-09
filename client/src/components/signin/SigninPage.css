@@ -1,0 +1,30 @@
+
+.social_login_container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social_login_box {
+  display: flex;
+  margin-top: 5%;
+}
+
+.naver_box {
+  margin: auto;
+  width: 250px;
+  height: 60px;
+  background-color: green;
+}
+
+.kakao_box {
+  margin: auto;
+  width: 250px;
+  height: 60px;
+  background-color: yellow;
+}
+
+
+.login_box {
+  margin-top: 10%;
+}
+
