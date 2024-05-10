@@ -4,21 +4,16 @@ import "./CalendarStyles.css";
 import moment from "moment";
 
 const CalendarPage = ({}) => {
-  const [nowDate, setNowDate] = useState("날짜");
-  const [isOpen, setIsOpen] = useState(false);
-  const [value, onChange] = useState(new Date());
-
-  const handleToggleCalendar = () => {
-    setIsOpen(!isOpen);
-  };
+  const [value, onChange] = useState();
+  const [nowDate, setNowDate] = useState(value);
   const handleDateChange = (selectedDate) => {
     onChange(selectedDate);
-    setIsOpen(false);
-    setNowDate(moment(selectedDate).format("YYYY년 MM월 DD일"));
+    setNowDate(moment(selectedDate).format("YYYY-MM-DD"));
   };
   return (
     <div className="content">
-      <div onClick={handleToggleCalendar}>{nowDate}</div>
+      {/*콘솔로 현재 선택한 날짜 출력*/}
+      <div>{console.log({ nowDate })}</div>
       <Calendar
         onChange={handleDateChange}
         value={value}
