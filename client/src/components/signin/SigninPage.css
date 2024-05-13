@@ -4,6 +4,15 @@
   margin-top: 20px;
 }
 
+.socail_login_text {
+  color: #1D1E24;
+  font-family: "Noto Sans KR";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .social_login_box {
   display: flex;
   margin-top: 5%;
@@ -23,15 +32,16 @@
   background-color: yellow;
 }
 
-
-.login_box {
-  margin-top: 10%;
-  display: flex;
+.signin_info_box {
+  margin: auto;
+  margin-top: 30px;
+  width: 730px;
+  height: 20px;
 }
 
 .signin_container {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -39,12 +49,31 @@
   height: 100px;
 }
 
-
 .signin_box {
   margin: auto;
   margin-top: 10px;
   width: 730px;
   height: 30px;
-  background-color: blue;
+  background-color: #F5F5FA;
+  border-radius: 10px;
+  border: none;
+}
+
+.submit_button_container {
+  display: flex;
+  margin: auto;
+  justify-content: end;
+}
+
+.submit_button {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  cursor: pointer; 
 }
 
