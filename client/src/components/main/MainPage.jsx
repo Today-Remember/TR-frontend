@@ -10,7 +10,7 @@ const MainPage = () => {
       <div className="show_text_box">
         <div className="text">{text}</div>
       </div>
-      <div className="input_box">
+      <div className="main_input_box">
         <input className="input"></input>
         <div className="send-button">
           <SendButton />
