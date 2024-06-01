@@ -12,7 +12,7 @@ const MainPage = () => {
 
   const handleClick = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/text", {
+      const response = await axios.post("/text", {
         text: inputText,
       });
       console.log("response: ", response.data);
@@ -22,10 +22,10 @@ const MainPage = () => {
   };
 
   // 백엔드 데이터 수신
-  useEffect(() => {  
+  useEffect(() => {
     const fetchText = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/text");
+        const response = await axios.get("/text");
         setReceivedText(response.data.received_text);
       } catch (error) {
         console.log("Error!, data: ", error);
