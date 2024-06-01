@@ -13,22 +13,47 @@
   background: none;
   cursor: pointer;
 }
-
 .react-calendar button:disabled {
   cursor: not-allowed;
 }
-
-.react-calendar button:enabled:hover,
-.react-calendar__tile button:enabled:focus {
-  background-color: #f0f0f0;
+.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
 }
-
+.react-calendar button abbr {
+  color: #000;
+  font-family: Lato;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px; /* 46.154% */
+  letter-spacing: 0.78px;
+  text-transform: uppercase;
+}
 .react-calendar__navigation {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 44px;
-  margin-bottom: 10px;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  margin-bottom: 50px;
+}
+.react-calendar__navigation button {
+  width: 50px; /* 원하는 너비로 조정 */
+  height: auto; /* 원하는 높이로 조정 */
+}
+
+.react-calendar__navigation__label__labelText {
+  color: var(--Gray-3, #828282);
+  text-align: center;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.react-calendar__navigation button:enabled:hover {
+  background-color: #ffffff; /* 내비게이션 바 버튼의 hover 색상 */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 박스 쉐도우 추가 */
+  border-radius: 20px;
 }
 
 .react-calendar__month-view__weekdays {
@@ -36,9 +61,18 @@
   justify-content: space-between;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
 }
-
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  color: #000;
+  font-family: Lato;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px; /* 46.154% */
+  letter-spacing: 0.78px;
+  text-transform: uppercase;
+}
 .react-calendar__month-view__weekdays__weekday {
   width: calc(100% / 7);
   padding: 2em 0;
@@ -47,13 +81,19 @@
 .react-calendar__month-view__days__day,
 .react-calendar__tile {
   width: calc(100% / 7);
-  padding: 10px 0;
+  padding: 15px 0;
   text-align: center;
   font-size: 1em;
 }
-
-.react-calendar__month-view__days__day--weekend {
-  color: #d10000;
+.react-calendar__decade-view__years {
+  color: #000;
+  font-family: Lato;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12px; /* 46.154% */
+  letter-spacing: 0.78px;
+  text-transform: uppercase;
 }
 
 .react-calendar__tile--now {
@@ -75,6 +115,46 @@
   background: #c6c7fe;
 }
 
-.react-calendar--selectRange .react-calendar__tile--hover {
-  background-color: #e6e6e6;
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #c6c7fe; /* 날짜 타일에만 hover 색상 적용 */
+}
+.yellow-tile {
+  background-color: rgb(
+    255,
+    255,
+    225
+  ) !important; /* 노란색으로 배경 색상 설정 */
+}
+
+.react-calendar__tile--active.yellow-tile {
+  background-color: rgb(
+    255,
+    255,
+    225
+  ) !important; /* 선택된 날짜와 노란색 타일의 충돌을 피하기 위해 필요한 스타일링 */
+}
+.today-tile-content {
+  position: relative;
+}
+
+.today-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.today-icon {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: -40px; /* 원하는 위치로 조정 */
+  left: 0; /* 원하는 위치로 조정 */
+  z-index: 0;
+}
+.today-overlay span {
+  margin-left: 5px;
+  color: white;
 }
