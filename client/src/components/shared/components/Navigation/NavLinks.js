@@ -12,7 +12,7 @@ const NavLinks = (props) => {
         <hr></hr>
       </li>
       <li>
-        <NavLink to="/calander">나의 일기장</NavLink>
+        <NavLink to="/calendar">나의 일기장</NavLink>
         <hr></hr>
       </li>
       <li>

@@ -100,7 +100,7 @@
   line-height: normal;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 580px) {
   .logo p {
     position: absolute;
     top: 40%;
