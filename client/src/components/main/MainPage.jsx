@@ -11,11 +11,13 @@ const MainPage = () => {
   };
 
   const handleClick = async () => {
+    console.log(inputText);
     try {
       const response = await axios.post("/text", {
         text: inputText,
       });
-      console.log("response: ", response.data);
+      console.log(response.data);
+      setReceivedText(response.data.received_text);
     } catch (error) {
       console.log("Error!, data: ", error);
     }
@@ -25,7 +27,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchText = async () => {
       try {
-        const response = await axios.get("/text");
+        const response = await axios.get("/aitext");
         setReceivedText(response.data.received_text);
       } catch (error) {
         console.log("Error!, data: ", error);
@@ -40,7 +42,7 @@ const MainPage = () => {
   return (
     <div className="container">
       <div className="show_text_box">
-        <div className="text">{receivedText}</div>
+        <div className="textbox">{receivedText}</div>
       </div>
       <div className="main_input_box">
         <input className="input" value={inputText} onChange={handleInput} />

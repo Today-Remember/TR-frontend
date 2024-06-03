@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SigninPage.css";
+import axios from "axios";
 import { ReactComponent as Kakao } from "../signin/SocialLogin/icon/kakao.svg";
 import { ReactComponent as Naver } from "../signin/SocialLogin/icon/naver.svg";
-const handleSubmit = () => {
-  // console.log('전송할 정보:', inputValue);
-  // 전송 후 입력값 초기화
-  // setInputValue('');
-};
 
 const SigninPage = () => {
+  const [nickname, setNickname] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async () => {
+    try {
+      // 회원가입 정보
+      const signUpData = {
+        id: username,
+        name: nickname,
+        password: password,
+        email: email,
+      };
+      // 회원가입 요청 보내기
+      const response = await axios.post("/signup", signUpData);
+
+      // 응답 처리
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error occurred during sign up:", error);
+    }
+  };
+
   return (
     <div className="content">
       <div className="social_login_container">
@@ -29,6 +49,8 @@ const SigninPage = () => {
             className="signin_box"
             type="text"
             placeholder="별명을 입력해주세요."
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
           ></input>
         </div>
         <div className="signin_container">
@@ -37,6 +59,8 @@ const SigninPage = () => {
             className="signin_box"
             type="text"
             placeholder="아이디를 입력해주세요."
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           ></input>
         </div>
         <div className="signin_container">
@@ -45,14 +69,18 @@ const SigninPage = () => {
             className="signin_box"
             type="password"
             placeholder="비밀번호를 입력해주세요."
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
         <div className="signin_container">
-          <p>비밀번호 확인</p>
+          <p>email</p>
           <input
             className="signin_box"
-            type="password"
+            type="text"
             placeholder="이메일을 입력해주세요"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
       </div>
