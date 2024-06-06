@@ -11,34 +11,18 @@ const MainPage = () => {
   };
 
   const handleClick = async () => {
-    console.log(inputText);
     try {
       const response = await axios.post("/text", {
-        text: inputText,
+        text: inputText
       });
-      console.log(response.data);
-      setReceivedText(response.data.received_text);
+      console.log("response: ", response.data);
+      setReceivedText(response.data.received_text); // 응답 데이터를 상태에 저장
     } catch (error) {
-      console.log("Error!, data: ", error);
+      console.log("PostError!, data: ", error);
     }
   };
 
-  // 백엔드 데이터 수신
-  useEffect(() => {
-    const fetchText = async () => {
-      try {
-        const response = await axios.get("/aitext");
-        setReceivedText(response.data.received_text);
-      } catch (error) {
-        console.log("Error!, data: ", error);
-      }
-    };
 
-    fetchText();
-  }, []);
-
-  // const text =
-  //   "오늘은 오전은 맑은 날씨였지만 바람이 많이 불었다. 오후에는 비가 조금 내렸다.비가와서 우산을 쓰고 집으로 왔다.";
   return (
     <div className="container">
       <div className="show_text_box">
