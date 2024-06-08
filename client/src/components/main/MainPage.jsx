@@ -10,18 +10,28 @@ const MainPage = () => {
     setInputText(e.target.value);
   };
 
-  const handleClick = async () => {
+  const handleClick = async () => {  // json 형식으로 보내는 방법
     try {
-      const response = await axios.post("/text", {
-        text: inputText
-      });
+      console.log("inputText: ", inputText);
+
+      const response = await axios.post("/detail", { text: inputText });
+
       console.log("response: ", response.data);
       setReceivedText(response.data.received_text); // 응답 데이터를 상태에 저장
     } catch (error) {
-      console.log("PostError!, data: ", error);
+      if (error.response) {
+        // 서버가 2xx 외의 상태 코드로 응답한 경우
+        console.error("Response error:", error.response.data);
+        console.error("Response error:", error);
+      } else if (error.request) {
+        // 요청이 전송되었지만 응답을 받지 못한 경우
+        console.error("Request error:", error.request);
+      } else {
+        // 요청을 설정하는 중에 발생한 에러
+        console.error("Error:", error.message);
+      }
     }
   };
-
 
   return (
     <div className="container">
