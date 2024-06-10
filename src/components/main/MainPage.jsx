@@ -17,7 +17,8 @@ const MainPage = () => {
       const response = await axios.post("/detail", { text: inputText });
 
       console.log("response: ", response.data);
-      setReceivedText(response.data.received_text); // 응답 데이터를 상태에 저장
+      setReceivedText(response.data.receivedText); // 응답 데이터를 상태에 저장
+      console.log("receivedText: ", receivedText);
     } catch (error) {
       if (error.response) {
         // 서버가 2xx 외의 상태 코드로 응답한 경우
