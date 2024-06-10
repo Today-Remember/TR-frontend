@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<IntroPage />} />
         <Route path="/main" element={<MainPage />} />
-        <Route path="/detail" element={<DetailPage />} />
+        <Route path="/detail/:date" element={<DetailPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/calendar" element={<CalendarPage />} />

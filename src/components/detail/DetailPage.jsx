@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import "./DetailPage.css";
 
-const MainPage = () => {
+const DetailPage = () => {
+  const location = useLocation();
+  const { date } = location.state;
+  const [details, setDetails] = useState("");
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      try {
+        const response = await axios.get("/detail", {
+          params: { date },
+        });
+        setDetails(response.data);
+      } catch (error) {
+        console.error("Error fetching details: ", error);
+      }
+    };
+    fetchDetails();
+  }, [date]);
+
   return (
     <div>
       <div className="detail_text_box">
         <div className="text">
-          오늘은 오전은 맑은 날씨였지만 바람이 많이 불었다.
-          오후에는 비가 조금 내렸다.
-          비가와서 우산을 쓰고 집으로 왔다.
+          {details["일기"] ? details["일기"] : "Loading..."}
         </div>
       </div>
     </div>
   );
 };
 
-export default MainPage;
+export default DetailPage;
