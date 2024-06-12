@@ -12,8 +12,10 @@ const MainPage = () => {
 
   const handleClick = async () => {
     try {
-      const response = await axios.post("/text", {
-        text: inputText
+      console.log("inputText: ", inputText);
+      console.log("Type", typeof inputText);
+      const response = await axios.post("/detail", {
+        detail: inputText
       });
       console.log("response: ", response.data);
       setReceivedText(response.data.received_text); // 응답 데이터를 상태에 저장
@@ -21,7 +23,7 @@ const MainPage = () => {
       console.log("PostError!, data: ", error);
     }
   };
-
+  
 
   return (
     <div className="container">
