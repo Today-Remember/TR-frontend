@@ -15,7 +15,7 @@ const MainPage = () => {
     try {
       console.log("inputText: ", inputText);
 
-      const response = await axios.post("/detail", { text: inputText });
+      const response = await axios.post(`${process.env.REACT_APP_API_ROOT}detail`, { text: inputText });
 
       console.log("response: ", response.data);
       setReceivedText(response.data.received_text); // 응답 데이터를 상태에 저장

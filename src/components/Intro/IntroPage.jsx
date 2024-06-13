@@ -12,7 +12,7 @@ const IntroPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://study.aiclub.kr:8013/login", {
+      const response = await axios.post(`${process.env.REACT_APP_API_ROOT}login`, {
         id,
         password
       });

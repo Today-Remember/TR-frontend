@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
+import { useLocation } from "react-router-dom";
 import Backdrop from "../../UIElements/Backdrop";
 import { TiThMenu } from "react-icons/ti";
 
@@ -8,7 +9,7 @@ import "./MainNavigation.css";
 
 const MainNavigation = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
-
+  const location = useLocation();
   const openDrawerHandler = () => {
     setDrawerIsOpen(true);
   };
@@ -16,7 +17,7 @@ const MainNavigation = (props) => {
   const closeDrawerHandler = () => {
     setDrawerIsOpen(false);
   };
-
+  const showMenuButton = location.pathname !== "/";
   return (
     <React.Fragment>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
@@ -25,10 +26,11 @@ const MainNavigation = (props) => {
           <NavLinks />
         </nav>
       </SideDrawer>
-      <div className="main-navigation__menu-btn" onClick={openDrawerHandler}>
-        <TiThMenu size={30} />
-      </div>
-      {/*사이드 드로어를 열 버튼*/}
+      {showMenuButton && (
+        <div className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+          <TiThMenu size={30} />
+        </div>
+      )}
     </React.Fragment>
   );
 };

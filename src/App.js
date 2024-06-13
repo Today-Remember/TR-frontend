@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import IntroPage from "./components/Intro/IntroPage";
 import MainPage from "./components/main/MainPage";
@@ -6,7 +7,9 @@ import HelpPage from "./components/help/HelpPage";
 import SigninPage from "./components/signin/SigninPage";
 import Navigation from "./components/shared/components/Navigation/MainNavigation";
 import CalendarPage from "./components/calendar/CalendarPage";
+
 function App() {
+  const [isLogined, setIsLogined]= useState(false);
   return (
     <Router>
       <Navigation />
