@@ -1,5 +1,5 @@
 .detail_text_box {
-  margin: 20px;
+  margin: 5%;
   display: flex;
   width: auto;
   height: 600px;
@@ -7,4 +7,46 @@
   align-items: center;
   border-radius: 20px;
   background-color: #F0F1FF;
+  background-image: url('./util/card.png'); /* Use the relative path to the image */
+  background-size: cover; /* Ensure the image covers the entire box */
+  background-position: center; /* Center the background image */
+  position: relative;
+  background-repeat: no-repeat; /* 이미지 반복 방지 */
+
+}
+@media (max-width: 580px) {
+  .detail_text_box{
+    margin: 20% 20px;
+    display: flex;
+    width: auto;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #F0F1FF;
+  }
+
+}
+.text {
+  padding: 0 150px;
+
+  z-index: 1; 
+}
+.none{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.none p{
+  color: white;
+  font-size: 20px;
+font-style: normal;
+font-weight: 800;
+}
+.nulldiary {
+  display: flex;
+  width: 140px; 
+  height: 140px;
+  margin: 5px;
 }

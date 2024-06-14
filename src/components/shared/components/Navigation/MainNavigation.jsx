@@ -17,7 +17,8 @@ const MainNavigation = (props) => {
   const closeDrawerHandler = () => {
     setDrawerIsOpen(false);
   };
-  const showMenuButton = location.pathname !== "/";
+  const showMenuButton = location.pathname !== "/" && location.pathname !== "/signin";
+
   return (
     <React.Fragment>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}

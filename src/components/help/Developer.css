@@ -1,0 +1,37 @@
+
+  .team-info, .my-info {
+    margin-top: 30px;
+  }
+  
+  .member {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member h3 {
+    margin-top: 0;
+    color: #6580E1;
+  }
+  
+  .member p {
+    margin-bottom: 10px;
+  }
+  
+  .member strong {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  @media (max-width: 600px) {
+    .content {
+      padding: 10px;
+    }
+  
+    .member {
+      padding: 10px;
+    }
+  }
+  

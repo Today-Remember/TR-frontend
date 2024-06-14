@@ -1,13 +1,19 @@
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto 0 auto;
-  background-color: transparent;
-  border-radius: 10px;
-  padding: 20px;
-}
+.intro_content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* 기본적으로 100% 너비 */
+    max-width: 1440px; /* 최대 너비 설정 */
+    height: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* 배경색을 흰색으로 변경 */
+    border-radius: 10px;
+    padding: 20px;
+    position: relative; /* 부모 요소에 상대 위치 지정 */
+    margin-top: 40px;
+  }
 
 .logo {
   width: 60%;
@@ -135,8 +141,14 @@
     font-weight: 400;
     line-height: normal;
   }
+  .intro_content {
+    width: 90%; /* 모바일에서는 너비를 90%로 설정 */
+    height: 100%; 
+    margin-top: 30%;
+  }
+  
 }
-@media (min-width: 581px) and (max-width: 1024px) {
+/* @media (min-width: 581px) and (max-width: 1024px) {
   .logo {
     width: 100%;
     position: relative;
@@ -146,4 +158,4 @@
   .logo p {
     font-size: 35px;
   }
-}
+} */

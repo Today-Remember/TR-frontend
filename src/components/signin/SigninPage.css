@@ -16,22 +16,63 @@
 @media (max-width: 768px) {
   .content {
     width: 90%; /* 모바일에서는 너비를 90%로 설정 */
-    height: auto; /* 높이를 자동으로 설정 */
-    padding: 10px; /* 패딩을 줄임 */
+    height: 100%; 
+  }
+  .social_login_box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .signin_info {
+    width: 100%;
+    margin-bottom: 74.5px;
+  }
+  .social_login_container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
-
 .social_login_container {
+  margin-top: 10%;
+  width: 80%; /* 너비를 줄이려면 이 값을 조정 */
+  max-width: 600px; /* 최대 너비를 설정하여 너무 넓어지지 않도록 */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.social_login_container h3 {
+  margin: 0;
+  padding: 0 10px; /* 필요에 따라 패딩을 추가하여 간격 조정 */
+  color: #1D1E24;
+  font-family: "Noto Sans KR";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 .social_login_box {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 34px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0; /* 위아래 패딩을 추가하여 간격 조정 */
+}
+.social_login_box > div{
+  display:flex;
+
 }
 .social_login_container h2 {
+  display: flex;
   color: #1d1e24;
   font-family: "Noto Sans KR";
   font-size: 24px;
@@ -41,7 +82,7 @@
 }
 .signin_info {
   width: 100%;
-  margin-top: 72px;
+  margin-top: 40px;
   margin-bottom: 74.5px;
 }
 
@@ -97,4 +138,5 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor:pointer;
 }

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./MainPage.css";
 import axios from "axios";
-
+import markImage from "./util/mark.png";
+import SendButton from "./Send/SendButton.jsx";
 const MainPage = () => {
   const [inputText, setInputText] = useState("");
   const [receivedText, setReceivedText] = useState("");
+
 
   const handleInput = (e) => {
     setInputText(e.target.value);
@@ -38,12 +40,13 @@ const MainPage = () => {
   return (
     <div className="container">
       <div className="show_text_box">
+      <img src={markImage} alt="Mark" className="mark-image" />
         <div className="textbox">{receivedText}</div>
       </div>
       <div className="main_input_box">
-        <input className="input" value={inputText} onChange={handleInput} />
+        <input className="input" value={inputText} onChange={handleInput}placeholder="당신의 일기를 들려주세요" />
         <button className="send-button" onClick={handleClick}>
-          보내기
+          <SendButton/>
         </button>
       </div>
     </div>

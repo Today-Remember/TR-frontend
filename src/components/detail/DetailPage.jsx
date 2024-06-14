@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import None from "./util/none.png";
 import "./DetailPage.css";
 
 const DetailPage = () => {
   const location = useLocation();
   const { date } = location.state;
-  const [details, setDetails] = useState({}); // 초기 상태를 빈 객체로 설정
+  const [details, setDetails] = useState({}); 
 
   const fetchDetails = async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API_ROOT}detail`, {
         params: { date },
       });
-      console.log("API 응답 데이터:", response); // 디버깅 출력
+      console.log("API response data:", response.data);
       setDetails(response.data.일기[0].detail);
     } catch (error) {
       console.error("Error fetching details: ", error);
@@ -22,24 +23,25 @@ const DetailPage = () => {
 
   useEffect(() => {
     fetchDetails();
-  }, [date]); // date가 변경될 때마다 실행되도록 설정
+  }, [date]);
 
   useEffect(() => {
-    console.log("상태 데이터:", details); // 업데이트된 상태를 확인
-  }, [details]); // details가 변경될 때마다 실행되도록 설정
+    console.log("State data:", details);
+  }, [details]);
 
   return (
     <div>
+      
       <div className="detail_text_box">
         <div className="text">
           {details !== null ? (
             typeof details === "string" ? (
               details
             ) : (
-              "Invalid data format"
+              <div className="none"><p>작성된 일기가 없습니다</p> <img src={None} alt="null diary" className="nulldiary" /></div>
             )
           ) : (
-            "일기가 없습니다"
+            <div className="none"><p>작성된 일기가 없습니다</p> <img src={None} alt="nulldiary" /></div>
           )}
         </div>
       </div>

@@ -21,10 +21,12 @@ const IntroPage = () => {
         console.log("Login successful:", response.data);
         navigate("/main");
       } else {
+        
         console.error("Login failed:", response.data);
       }
     } catch (error) {
       if (error.response) {
+        alert("아이디 비밀번호가 일치하지 않습니다. 다시 시도해 주세요")
         console.error("Login failed:", error.response.data);
       } else {
         console.error("An error occurred during login:", error);
@@ -33,7 +35,7 @@ const IntroPage = () => {
   };
 
   return (
-    <div className="content">
+    <div className="intro_content">
       <div className="logo">
         <img src={Logo} alt="logo" />
         <p>Today Remember</p>

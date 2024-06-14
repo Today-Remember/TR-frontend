@@ -16,7 +16,7 @@ const NavLinks = (props) => {
         <hr></hr>
       </li>
       <li>
-        <NavLink to="/help">도움말</NavLink>
+        <NavLink to="/help">정보</NavLink>
         <hr></hr>
       </li>
       <li>

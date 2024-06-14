@@ -1,8 +1,10 @@
 import React from "react";
+import Developer from "./Developer";
 
 const HelpPage = () => {
   return (
-    <div className="content">도움말 페이지입니다. 무엇을 도와드릴까요? </div>
+    <div className="content"><Developer/></div>
+    
   );
 };
 export default HelpPage;

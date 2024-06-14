@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ReactComponent as TodaySVG } from "./today.svg";
 
 import "./CalendarStyles.css";
+import styles from "./CalendarPage.module.css";
 
 const CalendarPage = () => {
   const [value, setValue] = useState(new Date());
@@ -36,7 +37,7 @@ const CalendarPage = () => {
   };
 
   return (
-    <div className="content">
+    <div className={styles.content}>
       <Calendar
         onChange={handleDateChange}
         value={value}
