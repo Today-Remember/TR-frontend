@@ -4,7 +4,7 @@ import Logo from "./Logo/img/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const IntroPage = () => {
+const IntroPage = ({ isLoggedIn, isLoggedInHandler }) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -19,6 +19,17 @@ const IntroPage = () => {
 
       if (response.status === 200) {
         console.log("Login successful:", response.data);
+
+         // 로컬에 저장
+         const userData = {
+          user: response.data.user,
+          token: response.data.token,
+          // expiration: tokenExpirationDate.toISOString(),
+        };
+        localStorage.setItem("userData", JSON.stringify(userData));
+        
+
+        isLoggedInHandler();
         navigate("/main");
       } else {
         

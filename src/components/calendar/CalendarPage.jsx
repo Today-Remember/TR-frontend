@@ -11,12 +11,16 @@ const CalendarPage = () => {
   const [value, setValue] = useState(new Date());
   const [nowDate] = useState(moment().format("YYYY-MM-DD"));
   const navigate = useNavigate();
-
+  const storedUserLoggedInData = JSON.parse(localStorage.getItem("userData"));
+  if (!storedUserLoggedInData || !storedUserLoggedInData.user) {
+    console.error("User data not found or userId is null");
+    return;
+  }
   const handleDateChange = async (selectedDate) => {
     console.log("선택된 날짜:", selectedDate);
     const formattedDate = moment(selectedDate).format("YYYY-MM-DD");
     setValue(selectedDate); // 여기는 Date 객체로 설정
-    console.log("벨류데이터:", formattedDate);
+    console.log("value:", formattedDate);
     navigate(`/detail/${formattedDate}`, { state: { date: formattedDate } }); // 포맷된 날짜 문자열 전달
   };
 
@@ -37,6 +41,8 @@ const CalendarPage = () => {
   };
 
   return (
+    <>
+    <h6>{`${storedUserLoggedInData.user}님`}</h6>
     <div className={styles.content}>
       <Calendar
         onChange={handleDateChange}
@@ -45,6 +51,7 @@ const CalendarPage = () => {
         tileContent={tileContent}
       />
     </div>
+    </>
   );
 };
 
