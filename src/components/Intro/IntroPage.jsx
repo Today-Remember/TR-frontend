@@ -37,10 +37,11 @@ const IntroPage = ({ isLoggedIn, isLoggedInHandler }) => {
       }
     } catch (error) {
       if (error.response) {
-        alert("아이디 비밀번호가 일치하지 않습니다. 다시 시도해 주세요")
+        alert("다시 시도해 주세요")
         console.error("Login failed:", error.response.data);
       } else {
         console.error("An error occurred during login:", error);
+        alert("다시 시도해 주세요")
       }
     }
   };

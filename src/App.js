@@ -26,16 +26,19 @@ function App() {
   const isLoggedInHandler = () => {
     setIsLoggedIn(true);
   };
+  useEffect(() => {
+    console.log("isLoggedIn state changed:", isLoggedIn); // 디버그용 로그 추가
+  }, [isLoggedIn]);
 
 
   return (
     <Router>
       <Navigation />
       <Routes>
-      <Route
-          path="/"
-          element={isLoggedIn ? <Navigate to="/main" /> : <IntroPage isLoggedIn={isLoggedIn} isLoggedInHandler={isLoggedInHandler} />}
-        />    
+        <Route path="/" element={<IntroPage isLoggedIn={isLoggedIn}
+        isLoggedInHandler={isLoggedInHandler}/>} />
+        
+        
         <Route path="/main" element={<MainPage />} />
         <Route path="/detail/:date" element={<DetailPage />} />
         <Route path="/help" element={<HelpPage />} />
