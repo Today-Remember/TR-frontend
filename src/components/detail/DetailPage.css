@@ -59,7 +59,22 @@
     border-radius: 10px;
     text-align: center;
   }
-
+  .none {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .none p {
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+  }
+  .text p {
+    width: 100%;
+  }
 }
 
 .text {
@@ -82,6 +97,7 @@
 }
 
 .none p {
+  width:400px;
   color: white;
   font-size: 20px;
   font-style: normal;
@@ -101,4 +117,41 @@ h6 {
   margin-bottom: 20px;
   text-align: center;
   height: auto;
+}
+.detail_text_box {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: #f0f0f0;
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.none {
+  text-align: center;
+}
+
+.none img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.delete-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
 }
