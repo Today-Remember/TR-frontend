@@ -7,36 +7,19 @@ import HelpPage from "./components/help/HelpPage";
 import SigninPage from "./components/signin/SigninPage";
 import Navigation from "./components/shared/components/Navigation/MainNavigation";
 import CalendarPage from "./components/calendar/CalendarPage";
+import { AuthProvider } from "./components/shared/context/AuthContext";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn]= useState(false);
-
-  useEffect(() => {
-    const storedUserLoggedInData = JSON.parse(localStorage.getItem("userData"));
-    if (
-      storedUserLoggedInData &&
-      storedUserLoggedInData.token &&
-      new Date(storedUserLoggedInData.expiration) > new Date()
-    ) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, []);
-  const isLoggedInHandler = () => {
-    setIsLoggedIn(true);
-  };
-  useEffect(() => {
-    console.log("isLoggedIn state changed:", isLoggedIn); // 디버그용 로그 추가
-  }, [isLoggedIn]);
 
 
   return (
+    <AuthProvider>
     <Router>
+
       <Navigation />
       <Routes>
-        <Route path="/" element={<IntroPage isLoggedIn={isLoggedIn}
-        isLoggedInHandler={isLoggedInHandler}/>} />
+        <Route path="/" element={<IntroPage
+        />} />
         
         
         <Route path="/main" element={<MainPage />} />
@@ -45,7 +28,9 @@ function App() {
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/calendar" element={<CalendarPage />} />
       </Routes>
+      
     </Router>
+    </AuthProvider>
   );
 }
 

@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./IntroPage.css";
 import Logo from "./Logo/img/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from '../shared/context/AuthContext'; 
 
-const IntroPage = ({ isLoggedIn, isLoggedInHandler }) => {
+
+const IntroPage = ({}) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  const { login } = useAuth();
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -28,8 +30,7 @@ const IntroPage = ({ isLoggedIn, isLoggedInHandler }) => {
         };
         localStorage.setItem("userData", JSON.stringify(userData));
         
-
-        isLoggedInHandler();
+        login();
         navigate("/main");
       } else {
         
