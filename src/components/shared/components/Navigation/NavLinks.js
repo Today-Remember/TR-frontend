@@ -29,19 +29,12 @@ const NavLinks = (props) => {
         <NavLink to="/help">정보</NavLink>
         <hr />
       </li>
-      {isAuthenticated ? (
         <li>
           <div onClick={handleLogout} className="nav-link-button">
             로그아웃
           </div>
           <hr />
         </li>
-      ) : (
-        <li>
-          <NavLink to="/login">로그인</NavLink>
-          <hr />
-        </li>
-      )}
     </ul>
   );
 };
