@@ -36,10 +36,10 @@ const SigninPage = () => {
       <div className="social_login_container">
         <h3>다른 소셜 계정으로 연결</h3>
         <div className="social_login_box">
-          <div>
+          <div style={{ cursor: 'pointer' }}>
             <Kakao />
           </div>
-          <div>
+          <div style={{ cursor: 'pointer' }}>
             <Naver />
           </div>
         </div>

@@ -10,7 +10,6 @@ const NavLinks = (props) => {
   const handleLogout = () => {
     logout(); // 인증 상태를 false로 변경
     localStorage.removeItem("userData"); // 로컬 스토리지에서 userData 삭제
-    navigate("/"); // 홈 페이지로 이동
   };
 
   return (
@@ -30,9 +29,9 @@ const NavLinks = (props) => {
         <hr />
       </li>
         <li>
-          <div onClick={handleLogout} className="nav-link-button">
+        <NavLink to="/" onClick={handleLogout} >
             로그아웃
-          </div>
+            </NavLink>
           <hr />
         </li>
     </ul>
